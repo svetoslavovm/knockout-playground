@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Clicker</title>
+</head>
+<body>
+
+    <div>
+      <h3>All Cats</h3>
+      <ul data-bind="foreach: catList">
+        <li data-bind="text: $data.name, click: $parent.showAnotherCat"></li>
+      </ul>
+    </div>
+
+    <div data-bind="with: currentCat">
+      <div>
+          <h2 data-bind="text: name"></h2>
+          <div data-bind="text: level"></div>
+          <div data-bind="text: clickCount"></div>
+
+          <img src="" width="400" height="200" data-bind="attr: {src: imgSource}, click: $parent.updateCount" alt="cute cat">
+      </div>
+
+      <ul data-bind="foreach: nickNames">
+        <li data-bind="text: $data"></li>
+      </ul>
+
+    </div>
+
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
